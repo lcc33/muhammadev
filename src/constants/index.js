@@ -21,6 +21,7 @@ import {
   shopify,
   carrent,
   jobit,
+  sharp,
   tripguide,
   threejs,
 } from "../assets";
@@ -76,10 +77,10 @@ const technologies = [
   //   name: "TypeScript",
   //   icon: typescript,
   // },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
+  // {
+  //   name: "React JS",
+  //   icon: reactjs,
+  // },
   // {
   //   name: "Redux Toolkit",
   //   icon: redux,
@@ -88,10 +89,10 @@ const technologies = [
     name: "Tailwind CSS",
     icon: tailwind,
   },
-  // {
-  //   name: "Node JS",
-  //   icon: nodejs,
-  // },
+  {
+    name: "Node JS",
+    icon: nodejs,
+  },
   // {
   //   name: "MongoDB",
   //   icon: mongodb,
@@ -197,16 +198,16 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Weather App",
+    name: "Keynest",
     description:
-      "A sleek and responsive weather web application that provides real-time weather updates for any location. Designed with a clean interface to deliver accurate forecasts and easy navigation.",
+      "Keynest is a sleek, web-based app that helps you securely store login credentials for all your favorite platforms. It's simple, stylish, and powered by Firebase for real-time storage and Google Sign-In authentication.",
     tags: [
       {
         name: "Javascript",
         color: "blue-text-gradient",
       },
       {
-        name: "OpenWeatherApi",
+        name: "Firebase",
         color: "green-text-gradient",
       },
       {
@@ -215,7 +216,7 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://lcc33.github.io/weathersage/",
+    source_code_link: "https://lcc33.github.io/keynest/public/keynest.html",
   },
   {
     name: "Whatsapp Bot",
@@ -223,11 +224,11 @@ const projects = [
       "An automated chatbot designed to interact seamlessly on WhatsApp. It supports custom commands, message handling, and can be tailored to perform various tasks efficiently. Built for productivity and automation.",
     tags: [
       {
-        name: "react",
+        name: "Baileys",
         color: "blue-text-gradient",
       },
       {
-        name: "react-native",
+        name: "nodejs",
         color: "green-text-gradient",
       },
       {
@@ -239,16 +240,37 @@ const projects = [
     source_code_link: "https://github.com/lcc33/whatsapp-bot.git",
   },
   {
-    name: "Omini",
+    name: "Trace Vault",
     description:
-      "An anime-focused website designed for fans to explore and download their favorite anime series. Features a user-friendly interface, responsive design, and efficient navigation for an enjoyable experience.",
+      "TraceVault(although still an MVP) is a campus-focused Lost & Found platform built to help students easily report lost items, view found items, and connect both ends securely. It aims to reduce the stress and time associated with finding lost belongings within university environments.",
+    tags: [
+      {
+        name: "Firebase",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Java",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Javascript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: sharp,
+    source_code_link: "https://github.com/lcc33/whatsapp-bot.git",
+  },
+  {
+    name: "Code no Hero",
+    description:
+      "Code no Hero(just an MVP) is an anime-themed website that teaches HTML, CSS, and JavaScript to beginners (especially teens). It makes learning web development fun and interactive by using characters, animations, and storytelling.",
     tags: [
       {
         name: "javascript",
         color: "blue-text-gradient",
       },
       {
-        name: "Api",
+        name: "Firebase",
         color: "green-text-gradient",
       },
       {
@@ -257,8 +279,8 @@ const projects = [
       },
     ],
     image: tripguide,
-    source_code_link: "https://lcc33.github.io/Omini/",
-  },
+    source_code_link: "https://lcc33.github.io/Code-no-hero/",
+  }
 ];
 
 export { services, technologies, experiences, testimonials, projects };
