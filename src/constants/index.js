@@ -24,6 +24,7 @@ import {
   sharp,
   tripguide,
   threejs,
+  omo,
 } from "../assets";
 
 export const navLinks = [
@@ -43,7 +44,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Express Developer",
     icon: web,
   },
   {
@@ -118,15 +119,15 @@ const technologies = [
 const experiences = [
   {
     title: "Frontend Developer ",
-    company_name: "Personal Projects",
+    company_name: "Personal Startup",
     icon: starbucks,
     iconBg: "#E6DEDD",
-    date: "Jan 2024 – Present",
+    date: "Jan 2024 - Present",
     points: [
-      "Building and maintaining web applications using React.js, HTML/CSS, and JavaScript",
-      "Designing and developing responsive UI components.",
+      "Building and maintaining web applications using React.js, Astro, and JavaScript",
+      "Designing and developing solution driven websites like TraceVault.",
       "Learning and applying best practices for modern web development. ",
-      "Hosting projects on GitHub and Netlify.",
+      "Hosting projects on GitHub and Vercel.",
     ],
   },
   // {
@@ -258,19 +259,19 @@ const projects = [
       },
     ],
     image: sharp,
-    source_code_link: "https://github.com/lcc33/whatsapp-bot.git",
+    source_code_link: "https://lcc33.github.io/trace-mvp/",
   },
   {
     name: "Code no Hero",
     description:
-      "Code no Hero(just an MVP) is an anime-themed website that teaches HTML, CSS, and JavaScript to beginners (especially teens). It makes learning web development fun and interactive by using characters, animations, and storytelling.",
+      "Code no Hero is your essential, no-nonsense frontend development cheatsheet. It's packed with quick references for HTML, CSS, JavaScript, and popular frameworks. Quickly find syntax, troubleshoot common issues, and get back to coding efficiently. Your go-to guide for fast, effective frontend development.",
     tags: [
       {
         name: "javascript",
         color: "blue-text-gradient",
       },
       {
-        name: "Firebase",
+        name: "Html",
         color: "green-text-gradient",
       },
       {
@@ -280,7 +281,28 @@ const projects = [
     ],
     image: tripguide,
     source_code_link: "https://lcc33.github.io/Code-no-hero/",
-  }
+  },
+  {
+    name: "KwikMart",
+    description:
+      "KwikMart is a campus-based e-commerce platform designed for students to easily buy and sell items within their university community. Inspired by platforms like Jiji, it streamlines peer-to-peer transactions, making it simple for students to find deals, post listings, and connect with other students for safe and convenient trading.",
+    tags: [
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Express",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Astro",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: omo,
+    source_code_link: "https://kwikmart-astro.vercel.app/",
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects };

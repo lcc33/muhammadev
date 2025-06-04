@@ -30,6 +30,7 @@ import carrent from "./images.png";
 import jobit from "./bot.png";
 import sharp from "./sharp.png";
 import tripguide from "./trip.png";
+import omo from "./omo.png";
 
 export {
   logo,
@@ -61,4 +62,5 @@ export {
   jobit,
   sharp,
   tripguide,
+  omo,
 };
