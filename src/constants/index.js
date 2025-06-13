@@ -25,6 +25,7 @@ import {
   tripguide,
   threejs,
   omo,
+  split,
 } from "../assets";
 
 export const navLinks = [
@@ -118,10 +119,10 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Frontend Developer ",
+    title: "Javascript Dev ",
     company_name: "Personal Startup",
     icon: starbucks,
-    iconBg: "#E6DEDD",
+    iconBg: "#383E56",
     date: "Jan 2024 - Present",
     points: [
       "Building and maintaining web applications using React.js, Astro, and JavaScript",
@@ -130,44 +131,18 @@ const experiences = [
       "Hosting projects on GitHub and Vercel.",
     ],
   },
-  // {
-  //   title: "React Native Developer",
-  //   company_name: "Tesla",
-  //   icon: tesla,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2021 - Feb 2022",
-  //   points: [
-  //     " Focused on mastering core web technologies (HTML, CSS, JavaScript).",
-  //     "Built several mini-projects like landing pages, to-do apps, portfolio sites",
-  //     "Practiced Git/GitHub for version control.",
-  //   ],
-  // },
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
+  {
+    title: " Frontend Developer",
+    company_name: "Diamond Park",
+    icon: starbucks,
+    iconBg: "#383E56",
+    date: "June 2025 - july 2025",
+    points: [
+      " Built the company's official website and a booking system to ensure maximum user experience.",
+      "Managed the booking payment system and hosting ",
+      "Practiced Git/GitHub for version control and collaboration.",
+    ],
+  },
 ];
 
 const testimonials = [
@@ -222,7 +197,7 @@ const projects = [
   {
     name: "Whatsapp Bot",
     description:
-      "An automated chatbot designed to interact seamlessly on WhatsApp. It supports custom commands, message handling, and can be tailored to perform various tasks efficiently. Built for productivity and automation.",
+      "An Open source automated chatbot designed to interact seamlessly on WhatsApp. It supports custom commands, message handling, and can be tailored to perform various tasks efficiently. Built for productivity and automation.",
     tags: [
       {
         name: "Baileys",
@@ -250,7 +225,7 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "Java",
+        name: "node",
         color: "green-text-gradient",
       },
       {
@@ -302,6 +277,27 @@ const projects = [
     ],
     image: omo,
     source_code_link: "https://kwikmart-astro.vercel.app/",
+  },
+  {
+    name: "SplitPay",
+    description:
+      "Splitpay is a peer-to-peer shared payment platform where people can create expense groups(e.g., food, electricity), split bills, track who paid what and who owes what, send reminders and also auto-calculate balances which in turn solves an everyday pain point of shared expenses and group payments.",
+    tags: [
+      {
+        name: "firebase",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Express",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Astro",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: split,
+    source_code_link: "https://splitpay-neon.vercel.app/",
   },
 ];
 

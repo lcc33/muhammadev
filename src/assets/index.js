@@ -31,6 +31,7 @@ import jobit from "./bot.png";
 import sharp from "./sharp.png";
 import tripguide from "./trip.png";
 import omo from "./omo.png";
+import split from "./split.png";
 
 export {
   logo,
@@ -63,4 +64,5 @@ export {
   sharp,
   tripguide,
   omo,
+  split,
 };
