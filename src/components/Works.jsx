@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
+import { Link } from "react-router-dom";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
@@ -15,7 +16,18 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  status,
 }) => {
+  const statusColor = (s) => {
+    const map = {
+      Completed: "bg-green-500",
+      "In Development": "bg-yellow-500",
+      "in Development": "bg-yellow-500",
+      MVP: "bg-violet-500",
+      Archived: "bg-gray-500",
+    };
+    return map[s] || "bg-gray-400";
+  };
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -32,23 +44,21 @@ const ProjectCard = ({
             alt="project_image"
             className="w-full h-full object-cover rounded-2xl"
           />
-
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>
-          </div>
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+            {status && (
+              <div
+                className={`px-2 py-1 rounded-full text-xs font-semibold text-black ${statusColor(
+                  status
+                )}`}
+              >
+                {status}
+              </div>
+            )}
+          </div>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
@@ -90,7 +100,9 @@ const Works = () => {
 
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <Link key={`project-${index}`} to={`/projects/${project.id}`}>
+            <ProjectCard index={index} {...project} />
+          </Link>
         ))}
       </div>
     </>

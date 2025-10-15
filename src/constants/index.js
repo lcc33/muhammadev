@@ -13,7 +13,6 @@ import {
   nodejs,
   mongodb,
   git,
-  // figma,
   docker,
   meta,
   starbucks,
@@ -26,6 +25,15 @@ import {
   threejs,
   omo,
   split,
+  figma,
+  insta,
+  twitter,
+  linkedln,
+  github,
+  close,
+  trace,
+  zeno,
+  bmb
 } from "../assets";
 
 export const navLinks = [
@@ -45,19 +53,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Express Developer",
+    title: "Frontend Developer",
     icon: web,
   },
   {
-    title: "Content Creator",
-    icon: mobile,
-  },
-  {
-    title: "Frontend Developer",
+    title: "Backend Developer",
     icon: backend,
   },
   {
-    title: "Gamer",
+    title: "Typescript Developer",
+    icon: mobile,
+  },
+  {
+    title: "Tech Founder",
     icon: creator,
   },
 ];
@@ -75,18 +83,14 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  // {
-  //   name: "TypeScript",
-  //   icon: typescript,
-  // },
-  // {
-  //   name: "React JS",
-  //   icon: reactjs,
-  // },
-  // {
-  //   name: "Redux Toolkit",
-  //   icon: redux,
-  // },
+  {
+    name: "React JS",
+    icon: reactjs,
+  },
+  {
+    name: "Next JS",
+    icon: threejs,
+  },
   {
     name: "Tailwind CSS",
     icon: tailwind,
@@ -95,158 +99,169 @@ const technologies = [
     name: "Node JS",
     icon: nodejs,
   },
-  // {
-  //   name: "MongoDB",
-  //   icon: mongodb,
-  // },
-  // {
-  //   name: "Three JS",
-  //   icon: threejs,
-  // },
+  {
+    name: "PostgreSQL",
+    icon: docker,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
   {
     name: "git",
     icon: git,
   },
-  // {
-  //   name: "figma",
-  //   icon: figma,
-  // },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
+];
+
+const socials = [
+  {
+    icon: twitter,
+  },
+  {
+    icon: github,
+  },
+  {
+    icon: linkedln,
+  },
+  {
+    icon: insta,
+  },
 ];
 
 const experiences = [
   {
-    title: "Javascript Dev ",
-    company_name: "Personal Startup",
+    title: "Founder & Fullstack Developer",
+    company_name: "Kindra",
     icon: starbucks,
     iconBg: "#383E56",
     date: "Jan 2024 - Present",
     points: [
-      "Building and maintaining web applications using React.js, Astro, and JavaScript",
-      "Designing and developing solution driven websites like TraceVault.",
-      "Learning and applying best practices for modern web development. ",
-      "Hosting projects on GitHub and Vercel.",
+      "Building and maintaining the company's ecosystem using Next.js, React, and FastAPI.",
+      "Developing impactful community-driven solutions like TraceVault and BuyMeBread.",
+      "Hosting and deploying projects on Vercel, Render, and GitHub.",
+      "Experimenting with open-source collaboration and improving developer experience.",
     ],
   },
   {
-    title: " Frontend Developer",
-    company_name: "Diamond Park",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "June 2025 - july 2025",
+    title: "Tech Director",
+    company_name: "Very Unreal",
+    icon: meta,
+    iconBg: "#E6DEDD",
+    date: "Sept 2025 - Present",
     points: [
-      " Built the company's official website and a booking system to ensure maximum user experience.",
-      "Managed the booking payment system and hosting ",
-      "Practiced Git/GitHub for version control and collaboration.",
+      "Leading the technology team and overseeing all technical development efforts.",
+      "Building the MVP for ZenoAI, the company's core AI-powered platform.",
+      "Implementing efficient, scalable systems using FastAPI and PostgreSQL.",
+      "Driving innovation, performance, and security across projects.",
     ],
   },
 ];
 
-const testimonials = [
-  // {
-  //   testimonial:
-  //     "I thought it was impossible to make a website as beautiful as our product, but he proved me wrong.",
-  //   name: "Sara Lee",
-  //   designation: "CFO",
-  //   company: "Acme Co",
-  //   image: "https://randomuser.me/api/portraits/women/4.jpg",
-  // },
-  // {
-  //   testimonial:
-  //     "I've never met a web developer who truly cares about their clients' success like he does.",
-  //   name: "Chris Brown",
-  //   designation: "COO",
-  //   company: "DEF Corp",
-  //   image: "https://randomuser.me/api/portraits/men/5.jpg",
-  // },
-  // {
-  //   testimonial:
-  //     "After Muhammad optimized our website, our traffic increased by 50%. We can't thank them enough!",
-  //   name: "Lisa Wang",
-  //   designation: "CTO",
-  //   company: "456 Enterprises",
-  //   image: "https://randomuser.me/api/portraits/women/6.jpg",
-  // },
-];
+const testimonials = [];
 
 const projects = [
+ {
+  id: "zenoai",
+  name: "ZenoAI",
+  status: "In Development",
+  description:
+    "ZenoAI is an AI-powered productivity and automation platform built under Very Unreal. It integrates intelligent task management, model interaction, and real-time collaboration — designed to help users and developers work smarter and faster.",
+  story:
+    "ZenoAI began as an idea to merge productivity with intelligence — not just another chatbot, but an assistant that truly understands work context. The MVP journey has been a test of focus: building the backend with FastAPI, connecting model inference via HuggingFace, and designing a smooth React frontend that feels fluid and personal.",
+  challenges:
+    "Balancing frontend polish with backend complexity has been the hardest part. Integrating AI models efficiently without compromising latency, and structuring FastAPI routes for modular scalability, pushed me to refine my backend logic. Every iteration makes the system faster and more human.",
+  vision:
+    "ZenoAI aims to become an intelligent workspace assistant for startups and builders — automating tasks, understanding goals, and collaborating in real time.",
+  tags: [
+    { name: "nextjs", color: "blue-text-gradient" },
+    { name: "fastapi", color: "green-text-gradient" },
+    { name: "postgresql", color: "pink-text-gradient" },
+  ],
+  image: zeno,
+  source_code_link: "https://zenoai-ten.vercel.app/",
+},
+
   {
-    name: "Keynest",
-    description:
-      "Keynest is a sleek, web-based app that helps you securely store login credentials for all your favorite platforms. It's simple, stylish, and powered by Firebase for real-time storage and Google Sign-In authentication.",
-    tags: [
-      {
-        name: "Javascript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Firebase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "CSS",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://lcc33.github.io/keynest/public/keynest.html",
-  },
+  id: "tracevault",
+  name: "TraceVault",
+  status: "In Development",
+  description:
+    "TraceVault is an open-source lost and found platform designed for campuses and communities. It allows users to report, search, and claim lost items seamlessly while building a trusted community of contributors.",
+  story:
+    "TraceVault started as a personal need — I kept seeing students lose items on campus without a proper way to find them. It began as a simple form-based app, but over time, it evolved into a community-driven platform with reporting, claiming, and moderation features. I wanted to prove that you don’t need a big team or funding to build something useful — just consistency and iteration.",
+  challenges:
+    "The hardest challenge was UI simplicity and scalability. Early versions felt cluttered, so I had to merge the report and explore pages into one, and build a fluid inline editing system for posts. I also had to think deeply about trust and abuse prevention in a community app without centralized moderation.",
+  vision:
+    "The goal is for TraceVault to live beyond me — a true open-source platform where developers and communities can customize and deploy their own lost-and-found systems. It’s more than code; it’s about restoring trust and connection in local spaces.",
+  tags: [
+    { name: 'nextjs', color: 'blue-text-gradient' },
+    { name: 'mongodb', color: 'green-text-gradient' },
+    { name: 'tailwind', color: 'pink-text-gradient' },
+  ],
+  image: trace,
+  source_code_link: 'https://tracevault.vercel.app/',
+},
+
   {
-    name: "Whatsapp Bot",
-    description:
-      "An Open source automated chatbot designed to interact seamlessly on WhatsApp. It supports custom commands, message handling, and can be tailored to perform various tasks efficiently. Built for productivity and automation.",
-    tags: [
-      {
-        name: "Baileys",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "nodejs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/lcc33/whatsapp-bot.git",
-  },
+  id: "buymebread",
+  name: "BuyMeBread",
+  status: "In Development",
+  description:
+    "BuyMeBread is a simple creator support platform under Kindra that allows fans to support their favorite creators directly through micro-donations. It focuses on simplicity, transparency, and meaningful connections.",
+  story:
+    "BuyMeBread came from a personal frustration with how most creator platforms are overcomplicated. I wanted something human — a space where creators could say, 'Buy me bread' instead of 'Subscribe to my tier'. It’s about real people supporting real effort. I started by building a clean landing page and payment flow prototype to test the idea.",
+  challenges:
+    "Right now, the main challenge is building a secure and transparent payment flow while keeping the UI dead simple. I’m testing small Next.js + FastAPI integrations and planning wallet-based options for micro-payments later on.",
+  vision:
+    "BuyMeBread aims to become a frictionless creator economy layer — where fans can support with intent, not subscriptions, and creators can grow communities without burnout or middlemen.",
+  tags: [
+    { name: 'nextjs', color: 'blue-text-gradient' },
+    { name: 'tailwind', color: 'green-text-gradient' },
+    { name: 'fastapi', color: 'pink-text-gradient' },
+  ],
+  image: bmb,
+  source_code_link: 'https://buymebread.vercel.app/',
+},
   {
-    name: "Trace Vault",
-    description:
-      "TraceVault(although still an MVP) is a campus-focused Lost & Found platform built to help students easily report lost items, view found items, and connect both ends securely. It aims to reduce the stress and time associated with finding lost belongings within university environments.",
-    tags: [
-      {
-        name: "Firebase",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "node",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: sharp,
-    source_code_link: "https://lcc33.github.io/trace-mvp/",
-  },
+  id: "kwikmart",
+  name: "KwikMart",
+  status: "In Development",
+  description:
+    "KwikMart is a decentralized, campus-based e-commerce platform that connects students looking to buy and sell items safely within their community.",
+  story:
+    "KwikMart began as an idea to make student trading safer. Most campus marketplaces are scattered — from WhatsApp groups to random posts. I wanted a structured space with profiles, verification, and trust built into the experience. I’ve been sketching the architecture with Astro for the frontend and planning to introduce smart contracts for transaction guarantees.",
+  challenges:
+    "I’m still exploring the right stack balance between decentralization and simplicity. Setting up a blockchain-backed escrow system without overcomplicating the user flow is tough. Plus, I’m still mastering backend tools like PostgreSQL and smart contract integration.",
+  vision:
+    "KwikMart will evolve into a student-powered decentralized market — one where transactions are transparent, fast, and community-driven. Long term, it could become the base layer for student-to-student trade across multiple campuses.",
+  tags: [
+    { name: 'astro', color: 'blue-text-gradient' },
+    { name: 'javascript', color: 'green-text-gradient' },
+    { name: 'python', color: 'pink-text-gradient' },
+  ],
+  image: omo,
+  source_code_link: 'https://kwikmart-astro.vercel.app/',
+},
+
   {
-    name: "Code no Hero",
+    id: "codenohero",
+    name: "Code No Hero",
+    status: "Completed",
     description:
-      "Code no Hero is your essential, no-nonsense frontend development cheatsheet. It's packed with quick references for HTML, CSS, JavaScript, and popular frameworks. Quickly find syntax, troubleshoot common issues, and get back to coding efficiently. Your go-to guide for fast, effective frontend development.",
+      "Code No Hero is your go-to frontend development cheatsheet — packed with quick references for HTML, CSS, JavaScript, and popular frameworks. Built for developers who want to learn and build faster.",
+    story:
+      "Code No Hero started as a personal notebook of common patterns and snippets I found myself reusing across projects. Over time it grew into a curated cheatsheet with the most useful quick references for daily frontend work.",
+    challenges:
+      "The main challenge was keeping entries concise while still being helpful — avoiding a bloated reference and instead focusing on practical, copy-paste-ready snippets. Organizing content for discoverability was also important.",
+    vision:
+      "The vision is for Code No Hero to be a tiny, fast reference that helps developers ship features faster — eventually community-maintained with examples and short explanations.",
     tags: [
       {
         name: "javascript",
         color: "blue-text-gradient",
       },
       {
-        name: "Html",
+        name: "html",
         color: "green-text-gradient",
       },
       {
@@ -258,47 +273,65 @@ const projects = [
     source_code_link: "https://lcc33.github.io/Code-no-hero/",
   },
   {
-    name: "KwikMart",
+    id: "keynest",
+    name: "Keynest",
+    status: "Completed",
     description:
-      "KwikMart is a campus-based e-commerce platform designed for students to easily buy and sell items within their university community. Inspired by platforms like Jiji, it streamlines peer-to-peer transactions, making it simple for students to find deals, post listings, and connect with other students for safe and convenient trading.",
+      "Keynest is a clean, web-based app for securely storing login credentials. It's powered by Firebase and Google Sign-In, designed to keep all your passwords safe and accessible anytime.",
+    story:
+      "Keynest began as a small project to simplify managing login credentials for multiple test accounts during development. I built a secure prototype using Firebase authentication and real-time storage for my own convenience because I didn't want to rely on Google Password Manager all the time.",
+    challenges:
+      "Security and UX were the primary challenges — ensuring credentials are stored safely, implementing proper auth flows, and keeping the interface minimal and trustworthy for users. For now it's a personal tool, but I'm exploring ways to make it more robust.",
+    vision:
+      "Keynest aims to be a lightweight, developer-friendly credential manager that remains simple to use while following best security practices.",
     tags: [
       {
         name: "javascript",
         color: "blue-text-gradient",
       },
       {
-        name: "Express",
+        name: "firebase",
         color: "green-text-gradient",
       },
       {
-        name: "Astro",
+        name: "css",
         color: "pink-text-gradient",
       },
     ],
-    image: omo,
-    source_code_link: "https://kwikmart-astro.vercel.app/",
+    image: carrent,
+    source_code_link:
+      "https://lcc33.github.io/keynest/public/keynest.html",
   },
+
   {
-    name: "SplitPay",
+    id: "whatsapp-bot",
+    name: "WhatsApp Bot",
+    status: "Completed",
     description:
-      "Splitpay is a peer-to-peer shared payment platform where people can create expense groups(e.g., food, electricity), split bills, track who paid what and who owes what, send reminders and also auto-calculate balances which in turn solves an everyday pain point of shared expenses and group payments.",
+      "An open-source automated WhatsApp bot built with Baileys and Node.js. It handles commands, messages, and automations — made for productivity and real-time communication.",
+    story:
+      "The WhatsApp Bot started as an automation experiment to simplify repetitive messaging tasks and provide quick utilities in group chats. I leveraged the Baileys library to interface with WhatsApp Web and prototype commands.",
+    challenges:
+      "Reliability and message parsing were the biggest hurdles — handling network disconnects, keeping command parsing robust, and respecting platform limits required careful engineering.",
+    vision:
+      "The project aims to be a flexible automation toolkit for WhatsApp that developers can extend with custom commands, integrations, and deployment patterns.",
     tags: [
       {
-        name: "firebase",
+        name: "baileys",
         color: "blue-text-gradient",
       },
       {
-        name: "Express",
+        name: "nodejs",
         color: "green-text-gradient",
       },
       {
-        name: "Astro",
+        name: "javascript",
         color: "pink-text-gradient",
       },
     ],
-    image: split,
-    source_code_link: "https://splitpay-neon.vercel.app/",
+    image: jobit,
+    source_code_link: "https://github.com/lcc33/whatsapp-bot.git",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, socials, experiences, testimonials, projects };

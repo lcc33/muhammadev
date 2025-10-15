@@ -32,6 +32,13 @@ import sharp from "./sharp.png";
 import tripguide from "./trip.png";
 import omo from "./omo.png";
 import split from "./split.png";
+import insta from "./socials/instagram-social-media-network-communication-interaction-connection-svgrepo-com.svg";
+import twitter from "./socials/x.svg";
+import linkedln from "./socials/linkedln.svg";
+import trace from "./trace.png";
+import zeno from "./zeno.png";
+import bmb from "./bmb.png";
+
 
 export {
   logo,
@@ -65,4 +72,10 @@ export {
   tripguide,
   omo,
   split,
+  insta,
+  twitter,
+  linkedln,
+  trace,
+  zeno,
+  bmb,
 };
