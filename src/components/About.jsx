@@ -47,20 +47,9 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am the Founder of{" "}
-        <a
-          href="#about"
-          className="mt-4 text-[#fbfcff] max-w-3xl leading-[30px] p-[1px] rounded-[20px] shadow-card hover:text-[#9373d6] text-[20px]  cursor-pointer font-bold"
-        >
-          Kindra
-        </a>{" "}
-        - a solution driven tech brand, A Web developer with experience in
-        Nodejs, JavaScript, Python, HTML and CSS and expertise in frameworks and libraries like Nextjs, React,
-        tailwind, Astro, Express, Flask and also proficiency in working with databases
-        like mongodb and postgresql. I'm a consistent and determined learner
-        always ready to collaborate closely with clients to create efficient,
-        scalable, and user-friendly solutions that solve real-world problems.
-        Let's work together to bring your ideas to life!
+       I'm a frontend web developer with experience in 
+        JavaScript, HTML and CSS  and expertise in frameworks like React, tailwind. I'm a slow but determined learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve
+        real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-5">

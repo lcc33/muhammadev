@@ -23,17 +23,6 @@ import {
   sharp,
   tripguide,
   threejs,
-  omo,
-  split,
-  figma,
-  insta,
-  twitter,
-  linkedln,
-  github,
-  close,
-  trace,
-  zeno,
-  bmb
 } from "../assets";
 
 export const navLinks = [
@@ -53,7 +42,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Frontend Developer",
+    title: "Web Developer",
     icon: web,
   },
   {
@@ -130,34 +119,84 @@ const socials = [
 
 const experiences = [
   {
-    title: "Founder & Fullstack Developer",
-    company_name: "Kindra",
+    title: "Frontend Developer ",
+    company_name: "Personal Projects",
     icon: starbucks,
-    iconBg: "#383E56",
-    date: "Jan 2024 - Present",
-    points: [
-      "Building and maintaining the company's ecosystem using Next.js, React, and FastAPI.",
-      "Developing impactful community-driven solutions like TraceVault and BuyMeBread.",
-      "Hosting and deploying projects on Vercel, Render, and GitHub.",
-      "Experimenting with open-source collaboration and improving developer experience.",
-    ],
-  },
-  {
-    title: "Tech Director",
-    company_name: "Very Unreal",
-    icon: meta,
     iconBg: "#E6DEDD",
-    date: "Sept 2025 - Present",
+    date: "Jan 2024 – Present",
     points: [
-      "Leading the technology team and overseeing all technical development efforts.",
-      "Building the MVP for ZenoAI, the company's core AI-powered platform.",
-      "Implementing efficient, scalable systems using FastAPI and PostgreSQL.",
-      "Driving innovation, performance, and security across projects.",
+      "Building and maintaining web applications using React.js, HTML/CSS, and JavaScript",
+      "Designing and developing responsive UI components.",
+      "Learning and applying best practices for modern web development. ",
+      "Hosting projects on GitHub and Netlify.",
     ],
   },
+  // {
+  //   title: "React Native Developer",
+  //   company_name: "Tesla",
+  //   icon: tesla,
+  //   iconBg: "#E6DEDD",
+  //   date: "Jan 2021 - Feb 2022",
+  //   points: [
+  //     " Focused on mastering core web technologies (HTML, CSS, JavaScript).",
+  //     "Built several mini-projects like landing pages, to-do apps, portfolio sites",
+  //     "Practiced Git/GitHub for version control.",
+  //   ],
+  // },
+  // {
+  //   title: "Web Developer",
+  //   company_name: "Shopify",
+  //   icon: shopify,
+  //   iconBg: "#383E56",
+  //   date: "Jan 2022 - Jan 2023",
+  //   points: [
+  //     "Developing and maintaining web applications using React.js and other related technologies.",
+  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+  //     "Implementing responsive design and ensuring cross-browser compatibility.",
+  //     "Participating in code reviews and providing constructive feedback to other developers.",
+  //   ],
+  // },
+  // {
+  //   title: "Full stack Developer",
+  //   company_name: "Meta",
+  //   icon: meta,
+  //   iconBg: "#E6DEDD",
+  //   date: "Jan 2023 - Present",
+  //   points: [
+  //     "Developing and maintaining web applications using React.js and other related technologies.",
+  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+  //     "Implementing responsive design and ensuring cross-browser compatibility.",
+  //     "Participating in code reviews and providing constructive feedback to other developers.",
+  //   ],
+  // },
 ];
 
-const testimonials = [];
+const testimonials = [
+  // {
+  //   testimonial:
+  //     "I thought it was impossible to make a website as beautiful as our product, but he proved me wrong.",
+  //   name: "Sara Lee",
+  //   designation: "CFO",
+  //   company: "Acme Co",
+  //   image: "https://randomuser.me/api/portraits/women/4.jpg",
+  // },
+  // {
+  //   testimonial:
+  //     "I've never met a web developer who truly cares about their clients' success like he does.",
+  //   name: "Chris Brown",
+  //   designation: "COO",
+  //   company: "DEF Corp",
+  //   image: "https://randomuser.me/api/portraits/men/5.jpg",
+  // },
+  // {
+  //   testimonial:
+  //     "After Muhammad optimized our website, our traffic increased by 50%. We can't thank them enough!",
+  //   name: "Lisa Wang",
+  //   designation: "CTO",
+  //   company: "456 Enterprises",
+  //   image: "https://randomuser.me/api/portraits/women/6.jpg",
+  // },
+];
 
 const projects = [
  {
@@ -223,45 +262,39 @@ const projects = [
   source_code_link: 'https://buymebread.vercel.app/',
 },
   {
-  id: "kwikmart",
-  name: "KwikMart",
-  status: "In Development",
-  description:
-    "KwikMart is a decentralized, campus-based e-commerce platform that connects students looking to buy and sell items safely within their community.",
-  story:
-    "KwikMart began as an idea to make student trading safer. Most campus marketplaces are scattered — from WhatsApp groups to random posts. I wanted a structured space with profiles, verification, and trust built into the experience. I’ve been sketching the architecture with Astro for the frontend and planning to introduce smart contracts for transaction guarantees.",
-  challenges:
-    "I’m still exploring the right stack balance between decentralization and simplicity. Setting up a blockchain-backed escrow system without overcomplicating the user flow is tough. Plus, I’m still mastering backend tools like PostgreSQL and smart contract integration.",
-  vision:
-    "KwikMart will evolve into a student-powered decentralized market — one where transactions are transparent, fast, and community-driven. Long term, it could become the base layer for student-to-student trade across multiple campuses.",
-  tags: [
-    { name: 'astro', color: 'blue-text-gradient' },
-    { name: 'javascript', color: 'green-text-gradient' },
-    { name: 'python', color: 'pink-text-gradient' },
-  ],
-  image: omo,
-  source_code_link: 'https://kwikmart-astro.vercel.app/',
-},
-
+    name: "Trace Vault",
+    description:
+      "TraceVault(although still an MVP) is a campus-focused Lost & Found platform built to help students easily report lost items, view found items, and connect both ends securely. It aims to reduce the stress and time associated with finding lost belongings within university environments.",
+    tags: [
+      {
+        name: "Firebase",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Java",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Javascript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: sharp,
+    source_code_link: "https://github.com/lcc33/whatsapp-bot.git",
+  },
   {
     id: "codenohero",
     name: "Code No Hero",
     status: "Completed",
     description:
-      "Code No Hero is your go-to frontend development cheatsheet — packed with quick references for HTML, CSS, JavaScript, and popular frameworks. Built for developers who want to learn and build faster.",
-    story:
-      "Code No Hero started as a personal notebook of common patterns and snippets I found myself reusing across projects. Over time it grew into a curated cheatsheet with the most useful quick references for daily frontend work.",
-    challenges:
-      "The main challenge was keeping entries concise while still being helpful — avoiding a bloated reference and instead focusing on practical, copy-paste-ready snippets. Organizing content for discoverability was also important.",
-    vision:
-      "The vision is for Code No Hero to be a tiny, fast reference that helps developers ship features faster — eventually community-maintained with examples and short explanations.",
+      "Code no Hero(just an MVP) is an anime-themed website that teaches HTML, CSS, and JavaScript to beginners (especially teens). It makes learning web development fun and interactive by using characters, animations, and storytelling.",
     tags: [
       {
         name: "javascript",
         color: "blue-text-gradient",
       },
       {
-        name: "html",
+        name: "Firebase",
         color: "green-text-gradient",
       },
       {
@@ -271,67 +304,7 @@ const projects = [
     ],
     image: tripguide,
     source_code_link: "https://lcc33.github.io/Code-no-hero/",
-  },
-  {
-    id: "keynest",
-    name: "Keynest",
-    status: "Completed",
-    description:
-      "Keynest is a clean, web-based app for securely storing login credentials. It's powered by Firebase and Google Sign-In, designed to keep all your passwords safe and accessible anytime.",
-    story:
-      "Keynest began as a small project to simplify managing login credentials for multiple test accounts during development. I built a secure prototype using Firebase authentication and real-time storage for my own convenience because I didn't want to rely on Google Password Manager all the time.",
-    challenges:
-      "Security and UX were the primary challenges — ensuring credentials are stored safely, implementing proper auth flows, and keeping the interface minimal and trustworthy for users. For now it's a personal tool, but I'm exploring ways to make it more robust.",
-    vision:
-      "Keynest aims to be a lightweight, developer-friendly credential manager that remains simple to use while following best security practices.",
-    tags: [
-      {
-        name: "javascript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "firebase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link:
-      "https://lcc33.github.io/keynest/public/keynest.html",
-  },
-
-  {
-    id: "whatsapp-bot",
-    name: "WhatsApp Bot",
-    status: "Completed",
-    description:
-      "An open-source automated WhatsApp bot built with Baileys and Node.js. It handles commands, messages, and automations — made for productivity and real-time communication.",
-    story:
-      "The WhatsApp Bot started as an automation experiment to simplify repetitive messaging tasks and provide quick utilities in group chats. I leveraged the Baileys library to interface with WhatsApp Web and prototype commands.",
-    challenges:
-      "Reliability and message parsing were the biggest hurdles — handling network disconnects, keeping command parsing robust, and respecting platform limits required careful engineering.",
-    vision:
-      "The project aims to be a flexible automation toolkit for WhatsApp that developers can extend with custom commands, integrations, and deployment patterns.",
-    tags: [
-      {
-        name: "baileys",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "nodejs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/lcc33/whatsapp-bot.git",
-  },
+  }
 ];
 
 export { services, technologies, socials, experiences, testimonials, projects };
