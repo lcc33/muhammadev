@@ -13,12 +13,16 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
+  const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 500px)").matches;
+  const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
+
   return (
     <Canvas
-      shadows
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      shadows={!isMobile}
+      // Earth has autoRotate — keep continuous frames for animation
+      frameloop={"always"}
+      dpr={dpr}
+      gl={{ preserveDrawingBuffer: false, antialias: true, powerPreference: "low-power" }}
       camera={{
         fov: 45,
         near: 0.1,

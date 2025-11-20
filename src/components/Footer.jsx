@@ -1,4 +1,3 @@
-import React from "react";
 import insta from "../assets/socials/instagram-social-media-network-communication-interaction-connection-svgrepo-com.svg";
 import twitter from "../assets/socials/x.svg";
 import linkedln from "../assets/socials/linkedln.svg";

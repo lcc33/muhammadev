@@ -5,15 +5,20 @@ import { staggerContainer } from "../utils/motion";
 
 const StarWrapper = (Component, idName) =>
   function HOC() {
+    // fallback for mobile devices where IntersectionObserver can be unreliable
+    const isMobile =
+      typeof window !== "undefined" && window.matchMedia("(max-width: 500px)").matches;
+
     return (
       <motion.section
         variants={staggerContainer()}
-        initial='hidden'
-        whileInView='show'
-        viewport={{ once: true, amount: 0.25 }}
+        initial="hidden"
+        {...(isMobile
+          ? { animate: "show" }
+          : { whileInView: "show", viewport: { once: true, amount: 0.25 } })}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
       >
-        <span className='hash-span' id={idName}>
+        <span className="hash-span" id={idName}>
           &nbsp;
         </span>
 

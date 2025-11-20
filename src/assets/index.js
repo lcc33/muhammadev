@@ -6,6 +6,10 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import zeno from "./zeno.png";
+import trace from "./trace.png";
+import bmb from "./bmb.png";
+import trip from "./trip.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -20,7 +24,6 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
-
 import meta from "./company/meta.png";
 import shopify from "./company/meta.png";
 import starbucks from "./company/meta.png";
@@ -28,10 +31,18 @@ import tesla from "./company/meta.png";
 
 import carrent from "./images.png";
 import jobit from "./bot.png";
-import sharp from "./sharp.png";
-import tripguide from "./trip.png";
+import bot from "./bot.png";
+import unreal from "./unreal.png";
+import veritas from "./veritas.png";
 
 export {
+  veritas,
+  unreal,
+  trip,
+  bot,
+  bmb,
+  trace,
+  zeno,
   logo,
   backend,
   creator,
@@ -59,6 +70,4 @@ export {
   tesla,
   carrent,
   jobit,
-  sharp,
-  tripguide,
 };

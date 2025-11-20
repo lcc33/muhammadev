@@ -5,7 +5,7 @@ import { fadeIn } from "./utils/motion";
 import {
   About,
   Contact,
-  Feedbacks,
+  
   Experience,
   Hero,
   Navbar,
@@ -29,7 +29,7 @@ const Landingpage = () => {
         {<Experience />}
         <Tech />
         <Works />
-        <Feedbacks />
+        {/* <Feedbacks /> */}
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />
@@ -58,7 +58,7 @@ function App() {
     if (location.pathname === "/") {
       const timer = setTimeout(() => {
         setLandingLoading(false);
-      }, 4000); // Show loading for 4 seconds
+      }, 7000); // Show loading for 4 seconds
 
       return () => clearTimeout(timer);
     } else {

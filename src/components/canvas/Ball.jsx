@@ -20,7 +20,7 @@ const Ball = (props) => {
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color='#fff8eb'
+          color="#fff8eb"
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -38,11 +38,16 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
+  // basic mobile check to lower DPR and avoid heavy GL settings on small devices
+  const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 500px)").matches;
+  const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
+
   return (
     <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      // Float animates — keep continuous frames for smooth motion, but limit DPR on mobile
+      frameloop={"always"}
+      dpr={dpr}
+      gl={{ preserveDrawingBuffer: false, antialias: true, powerPreference: "low-power" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
