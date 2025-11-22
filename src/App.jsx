@@ -58,7 +58,7 @@ function App() {
     if (location.pathname === "/") {
       const timer = setTimeout(() => {
         setLandingLoading(false);
-      }, 7000); // Show loading for 4 seconds
+      }, 5000); // Show loading for 4 seconds
 
       return () => clearTimeout(timer);
     } else {

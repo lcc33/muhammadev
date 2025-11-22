@@ -1,14 +1,35 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
+// 1. Import the necessary loaders from the 'three' package
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+// ... other imports
+
+// 2. Instantiate and configure the Draco loader
+const dracoLoader = new DRACOLoader();
+// Set the path to the Draco decoder files. These files (e.g., draco_decoder.wasm, draco_decoder.js)
+// are typically copied from the 'node_modules/draco3d/draco/' directory to your public directory (e.g., 'public/draco/').
+dracoLoader.setDecoderPath("/draco/"); // <--- **Important: Update this path**
+dracoLoader.setDecoderConfig({ type: "js" }); // Optional: specify 'js' or 'wasm'
+
+// 3. Set the Draco loader on the GLTF loader
+const gltfLoader = new GLTFLoader();
+gltfLoader.setDRACOLoader(dracoLoader);
+
+// 4. Use the custom loader in useGLTF
+useGLTF.preload("./desktop_pc/scene.gltf", gltfLoader);
+
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  // Pass the custom loader to useGLTF
+  const computer = useGLTF("./desktop_pc/scene.gltf", gltfLoader);
 
   return (
     <mesh>
+      {/* ... your lighting and primitive setup ... */}
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
@@ -63,9 +84,14 @@ const ComputersCanvas = () => {
       // computers are mostly static; demand frame loop helps perf
       frameloop={"demand"}
       shadows={!isMobile}
+      antialias={true}
       dpr={dpr}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: false, antialias: true, powerPreference: "low-power" }}
+      gl={{
+        preserveDrawingBuffer: false,
+        antialias: false,
+        powerPreference: "low-power",
+      }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
