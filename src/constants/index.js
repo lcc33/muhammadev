@@ -25,6 +25,9 @@ import {
   trace,
   trip,
   github,
+  azimg,
+  diamond,
+  bored,
 } from "../assets";
 
 export const navLinks = [
@@ -44,12 +47,12 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Writer ",
     icon: web,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "Frontend Developer",
+    icon: web,
   },
   {
     title: "Typescript Developer",
@@ -193,7 +196,7 @@ const projects = [
       { name: "tailwind", color: "pink-text-gradient" },
     ],
     image: trace,
-    source_code_link: "https://tracevault.vercel.app/",
+    source_code_link: "https://tracevault.xyz",
   },
 
   {
@@ -217,27 +220,27 @@ const projects = [
     source_code_link: "https://buymebread.vercel.app/",
   },
   {
-    id: "duesexares",
-    name: "Dues Ex Ares (GME-1 Protocol)",
+    id: "a-zpetstore",
+    name: "A-Z Pet Store",
     status: "Completed",
     description:
-      '"Deus Ex Ares" is an advanced WhatsApp Group Management and Enforcement (GME) utility engineered using Node.js and the secure whatsapp-web.js framework.',
+      '"A-Z Pet Store" is an e-commerce website that offers a wide range of pet products and accessories. The platform provides a user-friendly interface for browsing, searching, and purchasing items for various types of pets.',
     tags: [
       {
-        name: "Nodejs",
+        name: "Next.js",
         color: "blue-text-gradient",
       },
       {
-        name: "whatsapp-api",
+        name: "Tailwind CSS",
         color: "green-text-gradient",
       },
       {
-        name: "Javascript",
+        name: "TypeScript",
         color: "pink-text-gradient",
       },
     ],
-    image: bot,
-    source_code_link: "https://github.com/lcc33/whatsapp-bot.git",
+    image: azimg,
+    source_code_link: "https://a-z-pet-store.vercel.app/",
   },
   {
     id: "codenohero",
@@ -280,10 +283,56 @@ const projects = [
       {
         name: "tailwind",
         color: "pink-text-gradient",
-      }
+      },
     ],
     image: veritas,
     source_code_link: "https://veritas-beryl.vercel.app/",
+  },
+  {
+    id: "diamondpark",
+    name: "Diamond Park Ilorin",
+    status: "Completed",
+    description:
+      "Diamond Park Ilorin stands as the premier recreational and event destination in Ilorin, Kwara State, Nigeria. Nestled in a serene environment, the park offers a unique blend of natural beauty and modern amenities, making it the perfect escape for families, friends, and groups of all ages.",
+    tags: [
+      {
+        name: "firebase",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "css",
+        color: "green-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: diamond,
+    source_code_link: "https://diamond-park-ilorin.vercel.app/",
+  },
+  {
+    id: "boredshinigami",
+    name: "Bored Shinigami NFTs",
+    status: "In Development",
+    description:
+      "Bored Shinigamiz is the first collection of 11,111 unique 3D anime-inspired NFTs living on the Solana blockchain. Each Shinigami is hand-crafted with over 250+ traits. We want to build the strongest community and project around anime NFTs.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "green-text-gradient",
+      },
+      {
+        name: "web3",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: bored,
+    source_code_link: "https://bored-shinigami.vercel.app/",
   },
 ];
 

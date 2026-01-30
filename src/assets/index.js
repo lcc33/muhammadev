@@ -10,6 +10,10 @@ import zeno from "./zeno.png";
 import trace from "./trace.png";
 import bmb from "./bmb.png";
 import trip from "./trip.png";
+import azimg from "./a-z.png";
+import diamond from "./diamong.png";
+import bored from "./bored.png";
+
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -36,6 +40,9 @@ import unreal from "./unreal.png";
 import veritas from "./veritas.png";
 
 export {
+  bored,
+  diamond,
+  azimg,
   veritas,
   unreal,
   trip,

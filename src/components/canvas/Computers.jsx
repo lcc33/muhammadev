@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -7,29 +7,24 @@ import CanvasLoader from "../Loader";
 // 1. Import the necessary loaders from the 'three' package
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-// ... other imports
 
 // 2. Instantiate and configure the Draco loader
 const dracoLoader = new DRACOLoader();
-// Set the path to the Draco decoder files. These files (e.g., draco_decoder.wasm, draco_decoder.js)
-// are typically copied from the 'node_modules/draco3d/draco/' directory to your public directory (e.g., 'public/draco/').
-dracoLoader.setDecoderPath("/draco/"); // <--- **Important: Update this path**
-dracoLoader.setDecoderConfig({ type: "js" }); // Optional: specify 'js' or 'wasm'
+dracoLoader.setDecoderPath("/draco/"); // Make sure these files exist in public/draco/
+dracoLoader.setDecoderConfig({ type: "js" });
 
 // 3. Set the Draco loader on the GLTF loader
 const gltfLoader = new GLTFLoader();
 gltfLoader.setDRACOLoader(dracoLoader);
 
-// 4. Use the custom loader in useGLTF
+// 4. Preload with custom loader (only used on desktop)
 useGLTF.preload("./desktop_pc/scene.gltf", gltfLoader);
 
 const Computers = ({ isMobile }) => {
-  // Pass the custom loader to useGLTF
   const computer = useGLTF("./desktop_pc/scene.gltf", gltfLoader);
 
   return (
     <mesh>
-      {/* ... your lighting and primitive setup ... */}
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
@@ -45,7 +40,6 @@ const Computers = ({ isMobile }) => {
         scale={isMobile ? 0.7 : 0.75}
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
-        // avoid shadows on mobile to reduce cost
         castShadow={!isMobile}
         receiveShadow={!isMobile}
       />
@@ -57,33 +51,46 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Remove the listener when the component is unmounted
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
 
-  const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
+  // ────────────────────────────────────────────────
+  //     SHOW STATIC FALLBACK IMAGE ON MOBILE
+  // ────────────────────────────────────────────────
+  if (isMobile) {
+    return (
+      <div className="w-full h-[500px] md:h-[600px] mt-56 flex items-center justify-center bg-transparent">
+        <img
+          src="/port.png"
+          alt="Desktop PC workstation illustration"
+          className="max-w-[90%] max-h-[90%] object-contain rounded-3xl shadow-lg"
+          loading="lazy"
+        />
+      </div>
+    );
+  }
+
+  // ────────────────────────────────────────────────
+  //     FULL 3D CANVAS ONLY ON DESKTOP / LARGER SCREENS
+  // ────────────────────────────────────────────────
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
   return (
     <Canvas
-      // computers are mostly static; demand frame loop helps perf
-      frameloop={"demand"}
-      shadows={!isMobile}
+      frameloop="demand"
+      shadows
       antialias={true}
       dpr={dpr}
       camera={{ position: [20, 3, 5], fov: 25 }}

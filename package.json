@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "postinstall": "mkdir -p public/draco && cp -R node_modules/draco3d/* public/draco",
     "preview": "vite preview"
