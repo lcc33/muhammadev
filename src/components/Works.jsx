@@ -1,11 +1,11 @@
+import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
-
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { Link } from "react-router-dom";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
@@ -14,59 +14,56 @@ const ProjectCard = ({
   description,
   tags,
   image,
-  source_code_link,
   status,
 }) => {
-  const statusColor = (s) => {
-    const map = {
-      Completed: "bg-green-500",
-      "In Development": "bg-yellow-500",
-      "in Development": "bg-yellow-500",
-      MVP: "bg-violet-500",
-      Archived: "bg-gray-500",
-    };
-    return map[s] || "bg-gray-400";
+  // Memoized or simplified status mapping
+  const statusColors = {
+    Completed: "bg-green-500",
+    "In Development": "bg-yellow-500",
+    "in Development": "bg-yellow-500",
+    MVP: "bg-violet-500",
+    Archived: "bg-gray-500",
   };
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    // Reduced spring stiffness for smoother mobile performance
+    <motion.div variants={fadeIn("up", "tween", index * 0.1, 0.5)}>
       <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        tiltMaxAngleX={15}
+        tiltMaxAngleY={15}
+        scale={1.02}
+        transitionSpeed={450}
+        // IMPORTANT: Disables tilt on touch devices for performance
+        glareEnable={false}
+        tiltEnable={!('ontouchstart' in window)} 
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-full shadow-card hover:shadow-purple-500/10 transition-shadow"
       >
         <div className="relative w-full h-[230px]">
           <img
             src={image}
-            alt="project_image"
+            alt={name}
             className="w-full h-full object-cover rounded-2xl"
+            loading="lazy"
           />
         </div>
 
         <div className="mt-5">
-          <div className="flex items-center justify-between">
-            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <div className="flex items-center justify-between gap-2">
+            <h3 className="text-white font-bold text-[24px] truncate">{name}</h3>
             {status && (
-              <div
-                className={`px-2 py-1 rounded-full text-xs font-semibold text-black ${statusColor(
-                  status
-                )}`}
-              >
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold text-black uppercase tracking-wider ${statusColors[status] || "bg-gray-400"}`}>
                 {status}
-              </div>
+              </span>
             )}
           </div>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <p className="mt-2 text-secondary text-[14px] line-clamp-3 italic-text-fix">
+            {description}
+          </p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
+            <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}
@@ -80,8 +77,8 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={styles.sectionSubText}>My work</p>
+        <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -89,17 +86,14 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          Following projects showcase my skills and experience through real-world examples. 
+          Click on any card to dive deep into the story, challenges, and tech stack behind them.
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 flex flex-wrap justify-center gap-7">
         {projects.map((project, index) => (
-          <Link key={`project-${index}`} to={`/projects/${project.id}`}>
+          <Link key={project.id || index} to={`/projects/${project.id}`}>
             <ProjectCard index={index} {...project} />
           </Link>
         ))}
