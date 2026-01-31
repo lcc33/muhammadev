@@ -65,14 +65,14 @@ const services = [
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
+  // {
+  //   name: "HTML 5",
+  //   icon: html,
+  // },
+  // {
+  //   name: "CSS 3",
+  //   icon: css,
+  // },
   {
     name: "JavaScript",
     icon: javascript,
@@ -89,18 +89,18 @@ const technologies = [
     name: "Tailwind CSS",
     icon: tailwind,
   },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "PostgreSQL",
-    icon: docker,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
+  // {
+  //   name: "Node JS",
+  //   icon: nodejs,
+  // },
+  // {
+  //   name: "PostgreSQL",
+  //   icon: docker,
+  // },
+  // {
+  //   name: "MongoDB",
+  //   icon: mongodb,
+  // },
   {
     name: "git",
     icon: git,
@@ -109,10 +109,10 @@ const technologies = [
     name: "TypeScript",
     icon: typescript,
   },
-  {
-    name: "Docker",
-    icon: docker,
-  },
+  // {
+  //   name: "Docker",
+  //   icon: docker,
+  // },
 ];
 
 const experiences = [
@@ -224,7 +224,7 @@ const projects = [
     name: "A-Z Pet Store",
     status: "Completed",
     description:
-      '"A-Z Pet Store" is an e-commerce website that offers a wide range of pet products and accessories. The platform provides a user-friendly interface for browsing, searching, and purchasing items for various types of pets.',
+      'A-Z Pet Store is an e-commerce website that offers a wide range of pet products and accessories. The platform provides a user-friendly interface for browsing, searching, and purchasing items for various types of pets.',
     tags: [
       {
         name: "Next.js",

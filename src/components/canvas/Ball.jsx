@@ -10,29 +10,28 @@ import {
 
 import CanvasLoader from "../Loader";
 
-// Simplified Ball component with flatShading removed for a smoother look
-const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+const Ball = ({ imgUrl }) => {
+  const [decal] = useTexture([imgUrl]);
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      {/* Increased directional light intensity for better decal pop */}
-      <ambientLight intensity={0.1} /> 
-      <directionalLight position={[0, 0, 0.1]} intensity={0.8} /> 
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[0, 0, 0.05]} intensity={1} />
       <mesh castShadow receiveShadow scale={2.75}>
+        {/* Detail level 1 for icosahedron is perfect: round enough but very fast */}
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color="#fff8eb"
+          color='#fff8eb'
           polygonOffset
           polygonOffsetFactor={-5}
-          // flatShading removed for smooth sphere appearance
+          flatShading={false}
         />
         <Decal
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
-          // flatShading removed
+          flatShading={false}
         />
       </mesh>
     </Float>
@@ -40,16 +39,15 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
-  // basic mobile check to lower DPR and avoid heavy GL settings on small devices
-  const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 500px)").matches;
-  const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
-
   return (
     <Canvas
-      // Float animates — keep continuous frames for smooth motion, but limit DPR on mobile
-      frameloop={"always"}
-      dpr={dpr}
-      gl={{ preserveDrawingBuffer: false, antialias: true, powerPreference: "low-power" }}
+      frameloop='always'
+      dpr={[1, 2]} // Automatically handles mobile/desktop pixel density
+      gl={{ 
+        preserveDrawingBuffer: false, 
+        antialias: true, // Keep smooth edges
+        powerPreference: "high-performance" 
+      }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
