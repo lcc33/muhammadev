@@ -40,6 +40,10 @@ export const navLinks = [
     title: "Work",
   },
   {
+    id: "projects",
+    title: "Projects",
+  },
+  {
     id: "contact",
     title: "Contact",
   },
@@ -47,13 +51,10 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Writer ",
-    icon: web,
-  },
-  {
     title: "Frontend Developer",
     icon: web,
   },
+
   {
     title: "Typescript Developer",
     icon: mobile,
@@ -61,6 +62,10 @@ const services = [
   {
     title: "Tech Founder",
     icon: creator,
+  },
+  {
+    title: "Writer ",
+    icon: web,
   },
 ];
 
@@ -123,10 +128,10 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Jan 2024 – Present",
     points: [
-      "Building and maintaining web applications using React.js, HTML/CSS, and JavaScript",
+      "Building and maintaining web applications using React.js, Nextjs, and Typescript",
       "Designing and developing responsive UI components.",
       "Learning and applying best practices for modern web development. ",
-      "Hosting projects on GitHub and Netlify.",
+      "Hosting projects on Vercel and Pxxl space.",
     ],
   },
   {
@@ -137,7 +142,7 @@ const experiences = [
     date: "Sept 2025 - Present",
     points: [
       "Leading the technology team and overseeing all technical development efforts.",
-      "Building the MVP for ZenoAI, the company's core AI-powered platform.",
+      "Building the MVP for ZenoAI, the company's core AI-powered platform and Kentucky gaming group platform .",
       "Implementing efficient, scalable systems using FastAPI and PostgreSQL.",
       "Driving innovation, performance, and security across projects.",
     ],
@@ -171,7 +176,7 @@ const projects = [
       "ZenoAI aims to become an intelligent workspace assistant for startups and builders — automating tasks, understanding goals, and collaborating in real time.",
     tags: [
       { name: "nextjs", color: "blue-text-gradient" },
-      { name: "fastapi", color: "green-text-gradient" },
+      { name: "tailwindcss", color: "green-text-gradient" },
       { name: "postgresql", color: "pink-text-gradient" },
     ],
     image: zeno,
@@ -181,7 +186,7 @@ const projects = [
   {
     id: "tracevault",
     name: "TraceVault",
-    status: "In Development",
+    status: "MVP",
     description:
       "TraceVault is an open-source lost and found platform designed for campuses and communities. It allows users to report, search, and claim lost items seamlessly while building a trusted community of contributors.",
     story:
@@ -193,7 +198,7 @@ const projects = [
     tags: [
       { name: "nextjs", color: "blue-text-gradient" },
       { name: "mongodb", color: "green-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "cloudinary", color: "pink-text-gradient" },
     ],
     image: trace,
     source_code_link: "https://tracevault.xyz",
@@ -214,7 +219,7 @@ const projects = [
     tags: [
       { name: "nextjs", color: "blue-text-gradient" },
       { name: "tailwind", color: "green-text-gradient" },
-      { name: "fastapi", color: "pink-text-gradient" },
+      { name: "nestjs", color: "pink-text-gradient" },
     ],
     image: bmb,
     source_code_link: "https://buymebread.vercel.app/",
@@ -224,7 +229,7 @@ const projects = [
     name: "A-Z Pet Store",
     status: "Completed",
     description:
-      'A-Z Pet Store is an e-commerce website that offers a wide range of pet products and accessories. The platform provides a user-friendly interface for browsing, searching, and purchasing items for various types of pets.',
+      "A-Z Pet Store is an e-commerce website that offers a wide range of pet products and accessories. The platform provides a user-friendly interface for browsing, searching, and purchasing items for various types of pets.",
     tags: [
       {
         name: "Next.js",
@@ -277,7 +282,7 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "fastapi",
+        name: "nestjs",
         color: "green-text-gradient",
       },
       {
@@ -314,7 +319,7 @@ const projects = [
   {
     id: "boredshinigami",
     name: "Bored Shinigami NFTs",
-    status: "In Development",
+    status: "Completed",
     description:
       "Bored Shinigamiz is the first collection of 11,111 unique 3D anime-inspired NFTs living on the Solana blockchain. Each Shinigami is hand-crafted with over 250+ traits. We want to build the strongest community and project around anime NFTs.",
     tags: [

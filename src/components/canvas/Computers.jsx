@@ -6,10 +6,21 @@ import CanvasLoader from "../Loader";
 // 1. Moving the 3D logic into its own internal component.
 // We remove the manual DRACOLoader boilerplate because 'drei' handles it internally!
 const Computers = () => {
-  // Pass the draco path as the second argument. 
+  // Pass the draco path as the second argument.
   // This only fires if the 'Computers' component is mounted (Desktop only).
   const { scene } = useGLTF("./desktop_pc/scene.gltf", "/draco/");
+  const [isMobile, setIsMobile] = useState(null);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 600px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => setIsMobile(event.matches);
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () =>
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
@@ -17,13 +28,13 @@ const Computers = () => {
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={1}
+        intensity={0}
         castShadow
       />
       <pointLight intensity={1} />
       <primitive
         object={scene}
-        scale={0.75}
+        scale={isMobile ? 0.55 : 0.65}
         position={[0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -41,36 +52,35 @@ const ComputersCanvas = () => {
     const handleMediaQueryChange = (event) => setIsMobile(event.matches);
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    return () =>
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
   }, []);
 
   // Don't render anything until the screen size is detected
   if (isMobile === null) return null;
 
-  // ────────────────────────────────────────────────
   // MOBILE: Return ONLY the image. No Three.js hooks are called.
-  // ────────────────────────────────────────────────
-  if (isMobile) {
-    return (
-      <div className="w-full h-[400px] mt-20 flex items-center justify-center">
-        <img
-          src="/port.png"
-          alt="Desktop PC workstation"
-          className="w-[85%] h-auto object-contain mt-96 rounded-3xl drop-shadow-2xl"
-          loading="eager" 
-        />
-      </div>
-    );
-  }
 
-  // ────────────────────────────────────────────────
+  // if (isMobile) {
+  //   return (
+  //     <div className="w-full h-[400px] mt-20 flex items-center justify-center">
+  //       <img
+  //         src="/port.png"
+  //         alt="Desktop PC workstation"
+  //         className="w-[85%] h-auto object-contain mt-96 rounded-3xl drop-shadow-2xl"
+  //         loading="eager"
+  //       />
+  //     </div>
+  //   );
+  // }
+
   // DESKTOP: Full 3D Experience
-  // ────────────────────────────────────────────────
+
   return (
     <Canvas
       frameloop="demand"
       shadows
-      dpr={[1, 2]} // Standard way to handle pixel density
+      dpr={[0, 1]} // Standard way to handle pixel density
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: false, powerPreference: "high-performance" }}
     >

@@ -8,14 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  status,
-}) => {
+const ProjectCard = ({ index, name, description, tags, image, status }) => {
   // Memoized or simplified status mapping
   const statusColors = {
     Completed: "bg-green-500",
@@ -27,7 +20,7 @@ const ProjectCard = ({
 
   return (
     // Reduced spring stiffness for smoother mobile performance
-    <motion.div variants={fadeIn("up", "tween", index * 0.1, 0.5)}>
+    <div >
       <Tilt
         tiltMaxAngleX={15}
         tiltMaxAngleY={15}
@@ -35,7 +28,7 @@ const ProjectCard = ({
         transitionSpeed={450}
         // IMPORTANT: Disables tilt on touch devices for performance
         glareEnable={false}
-        tiltEnable={!('ontouchstart' in window)} 
+        tiltEnable={!("ontouchstart" in window)}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-full shadow-card hover:shadow-purple-500/10 transition-shadow"
       >
         <div className="relative w-full h-[230px]">
@@ -49,9 +42,13 @@ const ProjectCard = ({
 
         <div className="mt-5">
           <div className="flex items-center justify-between gap-2">
-            <h3 className="text-white font-bold text-[24px] truncate">{name}</h3>
+            <h3 className="text-white font-bold text-[24px] truncate">
+              {name}
+            </h3>
             {status && (
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold text-black uppercase tracking-wider ${statusColors[status] || "bg-gray-400"}`}>
+              <span
+                className={`px-2 py-0.5 rounded-full text-[10px] font-bold text-black uppercase tracking-wider ${statusColors[status] || "bg-gray-400"}`}
+              >
                 {status}
               </span>
             )}
@@ -63,32 +60,31 @@ const ProjectCard = ({
 
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
+            <p
+              key={`${name}-${tag.name}`}
+              className={`text-[14px] ${tag.color}`}
+            >
               #{tag.name}
             </p>
           ))}
         </div>
       </Tilt>
-    </motion.div>
+    </div>
   );
 };
 
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
-      </motion.div>
+      <p className={styles.sectionSubText} id="projects">My work</p>
+      <h2 className={styles.sectionHeadText}>Projects.</h2>
 
       <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
-        >
-          Following projects showcase my skills and experience through real-world examples. 
-          Click on any card to dive deep into the story, challenges, and tech stack behind them.
-        </motion.p>
+        <p className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
+          Following projects showcase my skills and experience through
+          real-world examples. Click on any card to dive deep into the story,
+          challenges, and tech stack behind them.
+        </p>
       </div>
 
       <div className="mt-20 flex flex-wrap justify-center gap-7">

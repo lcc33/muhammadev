@@ -9,7 +9,7 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // Load one after another
+      staggerChildren: 0.01, // Load one after another
     },
   },
 };
