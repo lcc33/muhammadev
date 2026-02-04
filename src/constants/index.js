@@ -28,6 +28,7 @@ import {
   azimg,
   diamond,
   bored,
+  blindspot,
 } from "../assets";
 
 export const navLinks = [
@@ -338,6 +339,29 @@ const projects = [
     ],
     image: bored,
     source_code_link: "https://bored-shinigami.vercel.app/",
+  },
+  {
+    id: "blindspot",
+    name: "Blindspot",
+    status: "In Development",
+    description:
+      "BlindSpot is a lightweight, privacy-first desktop app that helps streamers, teachers, traders, programmers, and anyone sharing their screen instantly hide sensitive information with blackout or blur overlays.",
+    tags: [
+      {
+        name: "rust & tauri",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "reactjs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: blindspot,
+    source_code_link: "https://blindspot-eta.vercel.app/",
   },
 ];
 

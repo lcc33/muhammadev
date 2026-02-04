@@ -13,6 +13,7 @@ import trip from "./trip.png";
 import azimg from "./a-z.png";
 import diamond from "./diamong.png";
 import bored from "./bored.png";
+import blindspot from "./blinspot.png";
 
 
 import css from "./tech/css.png";
@@ -46,6 +47,7 @@ export {
   veritas,
   unreal,
   trip,
+  blindspot,
   bot,
   bmb,
   trace,
